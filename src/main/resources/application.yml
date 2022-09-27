@@ -1,0 +1,24 @@
+
+
+#keycloak:
+#  realm: new-application-realm
+#  auth-server-url: http://localhost:8080/auth
+#  resource: new-application-client
+#  public-client: true
+#
+## protect resource (role 'user' is required)
+#  securityConstraints[0]:
+#    authRoles[0]:
+#      - user
+#    patterns[0]:
+#      - /resource/*
+
+
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/auth/realms/security-api
+#          jwk-set-uri: http://localhost:8080/auth/realms/security-api/protocol/openid-connect/certs
